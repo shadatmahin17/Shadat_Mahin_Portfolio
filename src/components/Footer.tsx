@@ -46,37 +46,37 @@ export default function Footer({ onNavigate, onOpenCv }: FooterProps) {
   };
 
   return (
-    <footer className="bg-neutral-950 text-neutral-400 border-t border-neutral-900/80 relative z-10 overflow-hidden select-none">
+    <footer className="bg-[#0D1114] text-[#D9DEE2] border-t border-[#2B3238] relative z-10 overflow-hidden select-none">
       {/* Ambient subtle top edge gradient */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#C9A34E]/30 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#1769AA]/40 to-transparent" />
       
       {/* Upper Navigation & Status Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6 border-b border-neutral-900/60">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6 border-b border-[#2B3238]">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
           
           {/* Left: Copyright */}
-          <div className="flex items-center gap-2 text-neutral-400 font-mono tracking-tight text-center md:text-left">
+          <div className="flex items-center gap-2 text-[#D9DEE2] font-mono tracking-tight text-center md:text-left">
             <span>&copy; {currentYear} Shadat Mahin</span>
-            <span className="text-neutral-700">|</span>
-            <span className="text-neutral-500">All Rights Reserved</span>
+            <span className="text-[#5C6670]">|</span>
+            <span className="text-[#5C6670]">All Rights Reserved</span>
           </div>
 
           {/* Right: Legal & Policy links */}
-          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-2 text-neutral-400 font-medium">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-2 text-[#D9DEE2] font-medium">
             <button
               onClick={() => setActiveModal("terms")}
               className="hover:text-white transition-colors cursor-pointer focus:outline-none focus:text-white"
             >
               Terms and Conditions
             </button>
-            <span className="text-neutral-800 select-none">•</span>
+            <span className="text-[#5C6670] select-none">•</span>
             <button
               onClick={() => setActiveModal("privacy")}
               className="hover:text-white transition-colors cursor-pointer focus:outline-none focus:text-white"
             >
               Privacy Policy
             </button>
-            <span className="text-neutral-800 select-none">•</span>
+            <span className="text-[#5C6670] select-none">•</span>
             <button
               onClick={() => setActiveModal("ethics")}
               className="hover:text-white transition-colors cursor-pointer focus:outline-none focus:text-white"
@@ -90,10 +90,10 @@ export default function Footer({ onNavigate, onOpenCv }: FooterProps) {
       {/* Massive Brand Watermark Section */}
       <div className="relative w-full overflow-hidden flex items-center justify-center pt-8 sm:pt-12 pb-8 sm:pb-12 px-4 sm:px-8 pointer-events-none">
         {/* Subtle radial glow centered behind text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-32 bg-[#C9A34E]/5 blur-3xl rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-32 bg-[#1769AA]/5 blur-3xl rounded-full" />
         
         <h1 
-          className="text-[8.2vw] sm:text-[9vw] md:text-[9.6vw] lg:text-[10vw] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-neutral-700 via-neutral-800/80 to-neutral-950 leading-none whitespace-nowrap select-none text-center"
+          className="text-[8.2vw] sm:text-[9vw] md:text-[9.6vw] lg:text-[10vw] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#2B3238] via-[#161A1D] to-[#0D1114] leading-none whitespace-nowrap select-none text-center"
           style={{
             letterSpacing: "-0.035em",
             fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -106,17 +106,17 @@ export default function Footer({ onNavigate, onOpenCv }: FooterProps) {
       {/* Policy / Legal Detail Modal */}
       {activeModal && policyContent[activeModal] && (
         <div 
-          className="fixed inset-0 z-[6000] flex items-center justify-center p-4 bg-neutral-950/80 backdrop-blur-md animate-fade-in pointer-events-auto"
+          className="fixed inset-0 z-[6000] flex items-center justify-center p-4 bg-[#0D1114]/85 backdrop-blur-md animate-fade-in pointer-events-auto"
           onClick={() => setActiveModal(null)}
           role="dialog"
           aria-modal="true"
         >
           <div 
-            className="relative w-full max-w-lg bg-neutral-900 border border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-2xl text-left space-y-4 animate-scale-up"
+            className="relative w-full max-w-lg bg-[#161A1D] border border-[#2B3238] rounded-3xl p-6 sm:p-8 shadow-2xl text-left space-y-4 animate-scale-up"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between border-b border-neutral-800 pb-4">
-              <div className="flex items-center gap-2.5 text-[#C9A34E]">
+            <div className="flex items-center justify-between border-b border-[#2B3238] pb-4">
+              <div className="flex items-center gap-2.5 text-[#1769AA]">
                 <ShieldCheck className="w-5 h-5" />
                 <h3 className="font-bold text-sm text-white uppercase tracking-wider">
                   {policyContent[activeModal].title}
@@ -124,21 +124,21 @@ export default function Footer({ onNavigate, onOpenCv }: FooterProps) {
               </div>
               <button 
                 onClick={() => setActiveModal(null)}
-                className="p-1.5 rounded-full hover:bg-neutral-800 text-neutral-400 hover:text-white transition-colors cursor-pointer focus:outline-none"
+                className="p-1.5 rounded-full hover:bg-[#2B3238] text-[#D9DEE2] hover:text-white transition-colors cursor-pointer focus:outline-none"
                 aria-label="Close Modal"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#D9DEE2] leading-relaxed">
               {policyContent[activeModal].body}
             </p>
 
             <div className="pt-2 flex justify-end">
               <button
                 onClick={() => setActiveModal(null)}
-                className="px-5 py-2 rounded-full bg-[#C9A34E] hover:bg-[#E5C97A] text-neutral-950 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer focus:ring-2 focus:ring-[#C9A34E]/50"
+                className="px-5 py-2 rounded-full bg-[#1769AA] hover:bg-[#125386] text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer focus:ring-2 focus:ring-[#1769AA]/50"
               >
                 Acknowledge
               </button>

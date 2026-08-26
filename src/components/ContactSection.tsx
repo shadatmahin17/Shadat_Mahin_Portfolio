@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import icon3dMail from "../assets/images/icon_3d_mail_1787634571168.jpg";
-import icon3dLinkedin from "../assets/images/icon_3d_linkedin_1787634586110.jpg";
-import icon3dGithub from "../assets/images/icon_3d_github_1787634598431.jpg";
+import icon3dMail from "../assets/images/mail_3d_icon_1787775274664.jpg";
+import icon3dLinkedin from "../assets/images/linkedin_3d_icon_1787775291289.jpg";
+import icon3dGithub from "../assets/images/github_3d_icon_1787775305701.jpg";
 import { 
   Send, 
   CheckCircle, 

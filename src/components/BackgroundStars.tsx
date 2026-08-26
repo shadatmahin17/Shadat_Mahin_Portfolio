@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, memo } from "react";
 
-const GOLD_COLOR = "201, 163, 78";
+const ACCENT_COLOR = "23, 105, 170"; // Aerospace Blue #1769AA
+const MESH_COLOR = "92, 102, 112";   // Steel Gray #5C6670
 
 function BackgroundStars() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -94,7 +95,7 @@ function BackgroundStars() {
         // Draw particle node
         ctx.beginPath();
         ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${GOLD_COLOR}, ${p1.alpha})`;
+        ctx.fillStyle = i % 3 === 0 ? `rgba(${ACCENT_COLOR}, ${p1.alpha * 0.85})` : `rgba(${MESH_COLOR}, ${p1.alpha * 0.7})`;
         ctx.fill();
 
         // Draw connecting lines with proximity falloff
@@ -105,8 +106,8 @@ function BackgroundStars() {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            const lineAlpha = (1 - dist / maxDistance) * 0.12;
-            ctx.strokeStyle = `rgba(${GOLD_COLOR}, ${lineAlpha})`;
+            const lineAlpha = (1 - dist / maxDistance) * 0.08;
+            ctx.strokeStyle = `rgba(${MESH_COLOR}, ${lineAlpha})`;
             ctx.stroke();
           }
         }

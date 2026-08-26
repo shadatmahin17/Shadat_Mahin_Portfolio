@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Experience, Education, Training, Language } from "../types";
 import { assetPaths } from "../lib/assets";
 import CertificateModal from "./CertificateModal";
-import icon3dAeroplane from "../assets/images/icon_3d_aeroplane_1787633159138.jpg";
-import icon3dMatlab from "../assets/images/icon_3d_matlab_1787633171652.jpg";
-import icon3dFashion from "../assets/images/icon_3d_fashion_new_1787633997108.jpg";
-import icon3dBriefcase from "../assets/images/icon_3d_briefcase_1787633112935.jpg";
-import icon3dMedal from "../assets/images/icon_3d_medal_1787633125607.jpg";
-import icon3dGlobe from "../assets/images/icon_3d_globe_1787633140082.jpg";
-import icon3dEducation from "../assets/images/icon_3d_education_1787634192430.jpg";
+import icon3dAeroplane from "../assets/images/aeroplane_3d_icon_1787775234127.jpg";
+import icon3dMatlab from "../assets/images/matlab_3d_icon_1787775220092.jpg";
+import icon3dFashion from "../assets/images/fashion_design_3d_icon_1787775692848.jpg";
+import icon3dBriefcase from "../assets/images/briefcase_3d_icon_1787775134330.jpg";
+import icon3dMedal from "../assets/images/medal_3d_icon_1787775162478.jpg";
+import icon3dGlobe from "../assets/images/globe_3d_icon_1787775706516.jpg";
+import icon3dEducation from "../assets/images/education_3d_icon_1787775149053.jpg";
 import { 
   Briefcase, 
   GraduationCap, 
@@ -140,37 +140,37 @@ export default function ResumeTimelines() {
         
         {/* Experience Column */}
         <div id="experience" className="space-y-8 scroll-mt-24">
-          <div className="flex items-center gap-3 border-b border-neutral-100 pb-3">
-            <div className="w-9 h-9 rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(201,163,78,0.25)] border border-[#C9A34E]/30 bg-neutral-950 flex items-center justify-center shrink-0">
+          <div className="flex items-center gap-3 border-b border-[#D9DEE2] pb-3">
+            <div className="w-9 h-9 rounded-xl overflow-hidden border border-[#D9DEE2] bg-[#0D1114] flex items-center justify-center shrink-0">
               <img src={icon3dBriefcase} alt="3D Work Experience" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
-            <h3 className="text-xl font-bold tracking-tight text-neutral-900">Work Experience</h3>
+            <h3 className="text-xl font-bold tracking-tight text-[#161A1D]">Work Experience</h3>
           </div>
 
-          <div className="relative border-l-2 border-dashed border-neutral-200 pl-6 ml-3 space-y-10">
+          <div className="relative border-l-2 border-dashed border-[#D9DEE2] pl-6 ml-3 space-y-8">
             {EXPERIENCES.map((exp, idx) => (
               <div key={idx} className="relative group">
                 {/* Node counter dot */}
-                <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-[var(--accent)] group-hover:bg-[var(--accent)] transition-all shadow-[0_0_8px_var(--accent-glow)]" />
+                <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-[#1769AA] group-hover:bg-[#1769AA] transition-all shadow-[0_0_8px_rgba(23,105,170,0.3)]" />
                 
-                <div className="bg-[var(--card-bg)] border border-neutral-200/60 rounded-2xl p-5 shadow-sm group-hover:border-[var(--accent)] group-hover:bg-neutral-50/20 transition-all space-y-3">
+                <div className="bg-[#FFFFFF] border border-[#D9DEE2] rounded-2xl p-5 shadow-xs group-hover:border-[#1769AA]/60 group-hover:shadow-md transition-all space-y-3">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
-                      <h4 className="font-bold text-neutral-900 group-hover:text-[var(--accent)] transition-colors">
+                      <h4 className="font-bold text-[#161A1D] group-hover:text-[#1769AA] transition-colors">
                         {exp.role}
                       </h4>
-                      <p className="text-xs text-neutral-500 font-semibold flex items-center gap-1.5">
-                        <Building className="w-3.5 h-3.5 text-[var(--accent)]" /> {exp.company} &bull; {exp.location}
+                      <p className="text-xs text-[#5C6670] font-semibold flex items-center gap-1.5 mt-0.5">
+                        <Building className="w-3.5 h-3.5 text-[#1769AA]" /> {exp.company} &bull; {exp.location}
                       </p>
                     </div>
-                    <span className="text-[10px] uppercase font-bold text-[var(--accent)] bg-[var(--accent-glow)] px-2.5 py-1 rounded-full border border-[var(--accent)]/15 flex items-center gap-1.5 shrink-0">
-                      <Calendar className="w-3 h-3" /> {exp.date}
+                    <span className="text-[10px] uppercase font-bold text-[#1769AA] bg-[#E8F3FA] px-2.5 py-1 rounded-full border border-[#D9DEE2] flex items-center gap-1.5 shrink-0">
+                      <Calendar className="w-3 h-3 text-[#1769AA]" /> {exp.date}
                     </span>
                   </div>
 
                   <ul className="space-y-2 mt-2">
                     {exp.highlights.map((h, hIdx) => (
-                      <li key={hIdx} className="text-xs text-neutral-600 leading-relaxed list-disc list-inside">
+                      <li key={hIdx} className="text-xs text-[#5C6670] leading-relaxed list-disc list-inside">
                         {h}
                       </li>
                     ))}
@@ -183,35 +183,35 @@ export default function ResumeTimelines() {
 
         {/* Education Column */}
         <div id="education" className="space-y-8 scroll-mt-24">
-          <div className="flex items-center gap-3 border-b border-neutral-100 pb-3">
-            <div className="w-9 h-9 rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(201,163,78,0.25)] border border-[#C9A34E]/30 bg-neutral-950 flex items-center justify-center shrink-0">
+          <div className="flex items-center gap-3 border-b border-[#D9DEE2] pb-3">
+            <div className="w-9 h-9 rounded-xl overflow-hidden border border-[#D9DEE2] bg-[#0D1114] flex items-center justify-center shrink-0">
               <img src={icon3dEducation} alt="3D Education" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
-            <h3 className="text-xl font-bold tracking-tight text-neutral-900">Education</h3>
+            <h3 className="text-xl font-bold tracking-tight text-[#161A1D]">Education</h3>
           </div>
 
-          <div className="relative border-l-2 border-dashed border-neutral-200 pl-6 ml-3 space-y-10">
+          <div className="relative border-l-2 border-dashed border-[#D9DEE2] pl-6 ml-3 space-y-8">
             {EDUCATIONS.map((edu, idx) => (
               <div key={idx} className="relative group">
-                <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-[var(--accent)] group-hover:bg-[var(--accent)] transition-all shadow-[0_0_8px_var(--accent-glow)]" />
+                <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-[#1769AA] group-hover:bg-[#1769AA] transition-all shadow-[0_0_8px_rgba(23,105,170,0.3)]" />
                 
-                <div className="bg-[var(--card-bg)] border border-neutral-200/60 rounded-2xl p-5 shadow-sm group-hover:border-[var(--accent)] group-hover:bg-neutral-50/20 transition-all space-y-2">
+                <div className="bg-[#FFFFFF] border border-[#D9DEE2] rounded-2xl p-5 shadow-xs group-hover:border-[#1769AA]/60 group-hover:shadow-md transition-all space-y-2">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
-                      <h4 className="font-bold text-neutral-900 group-hover:text-[var(--accent)] transition-colors">
+                      <h4 className="font-bold text-[#161A1D] group-hover:text-[#1769AA] transition-colors">
                         {edu.degree}
                       </h4>
-                      <p className="text-xs text-neutral-500 font-semibold">
+                      <p className="text-xs text-[#5C6670] font-semibold mt-0.5">
                         {edu.institution} &bull; {edu.location}
                       </p>
                     </div>
-                    <span className="text-[10px] uppercase font-bold text-neutral-500 bg-neutral-100 px-2.5 py-1 rounded-full shrink-0">
+                    <span className="text-[10px] uppercase font-bold text-[#5C6670] bg-[#F7F9FA] px-2.5 py-1 rounded-full border border-[#D9DEE2] shrink-0">
                       {edu.date}
                     </span>
                   </div>
 
                   {edu.badge && (
-                    <span className="inline-block mt-1 text-[10px] font-extrabold tracking-wider bg-[var(--accent-glow)] border border-[var(--accent)]/30 text-[var(--accent)] px-3 py-1 rounded-full uppercase">
+                    <span className="inline-block mt-1 text-[10px] font-extrabold tracking-wider bg-[#E8F3FA] border border-[#D9DEE2] text-[#1769AA] px-3 py-1 rounded-full uppercase">
                       {edu.badge}
                     </span>
                   )}
@@ -228,17 +228,17 @@ export default function ResumeTimelines() {
         
         {/* Trainings & Certificates */}
         <div id="certifications" className="space-y-6 scroll-mt-24">
-          <div className="flex items-center justify-between border-b border-neutral-100 pb-3">
+          <div className="flex items-center justify-between border-b border-[#D9DEE2] pb-3">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(201,163,78,0.25)] border border-[#C9A34E]/30 bg-neutral-950 flex items-center justify-center shrink-0">
+              <div className="w-9 h-9 rounded-xl overflow-hidden border border-[#D9DEE2] bg-[#0D1114] flex items-center justify-center shrink-0">
                 <img src={icon3dMedal} alt="3D Certifications" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
               <div>
-                <h3 className="text-xl font-bold tracking-tight text-neutral-900">Academic Training &amp; Certs</h3>
+                <h3 className="text-xl font-bold tracking-tight text-[#161A1D]">Academic Training &amp; Certs</h3>
               </div>
             </div>
-            <span className="text-[11px] font-semibold text-[var(--accent)] bg-[var(--accent-glow)] px-2.5 py-1 rounded-full flex items-center gap-1 border border-[var(--accent)]/20">
-              <Eye className="w-3 h-3" /> Click any cert to view
+            <span className="text-[11px] font-semibold text-[#1769AA] bg-[#E8F3FA] px-2.5 py-1 rounded-full flex items-center gap-1 border border-[#D9DEE2]">
+              <Eye className="w-3 h-3" /> Click cert to view
             </span>
           </div>
 
@@ -255,7 +255,7 @@ export default function ResumeTimelines() {
                 <div 
                   key={idx} 
                   onClick={() => setSelectedCertificate(train)}
-                  className="bg-[var(--card-bg)] border border-neutral-200/60 p-4.5 rounded-2xl flex flex-col justify-between space-y-3 hover:border-[var(--accent)] transition-all hover:bg-neutral-50/30 shadow-xs hover:shadow-md group cursor-pointer relative overflow-hidden"
+                  className="bg-[#FFFFFF] border border-[#D9DEE2] p-4.5 rounded-2xl flex flex-col justify-between space-y-3 hover:border-[#1769AA]/60 transition-all hover:shadow-md group cursor-pointer relative overflow-hidden"
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
@@ -266,13 +266,13 @@ export default function ResumeTimelines() {
                   aria-label={`View certificate for ${train.title}`}
                 >
                   {/* Top Corner Badge Indicator */}
-                  <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 text-[10px] font-bold text-[var(--accent)] bg-white/95 px-2.5 py-1 rounded-full border border-[var(--accent)]/30 shadow-xs z-10">
+                  <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 text-[10px] font-bold text-[#1769AA] bg-[#FFFFFF] px-2.5 py-1 rounded-full border border-[#D9DEE2] shadow-xs z-10">
                     <Eye className="w-3 h-3" /> View Certificate
                   </div>
 
                   <div className="flex items-start gap-3.5">
                     {/* 3D Icon Container */}
-                    <div className="w-12 h-12 rounded-xl overflow-hidden shadow-[0_6px_14px_-2px_rgba(201,163,78,0.3)] border border-[#C9A34E]/30 shrink-0 group-hover:scale-105 transition-transform duration-300 bg-neutral-950 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-xl overflow-hidden border border-[#D9DEE2] shrink-0 group-hover:scale-105 transition-transform duration-300 bg-[#0D1114] flex items-center justify-center">
                       <img 
                         src={icon3dSrc} 
                         alt={`${train.title} 3D icon`} 
@@ -283,26 +283,26 @@ export default function ResumeTimelines() {
 
                     <div className="space-y-1 flex-1 min-w-0 pr-12">
                       <div className="flex items-center justify-between gap-2 flex-wrap">
-                        <span className="text-[10px] font-extrabold text-[var(--accent)] uppercase tracking-wider bg-[var(--accent-glow)] px-2 py-0.5 rounded">
+                        <span className="text-[10px] font-extrabold text-[#1769AA] uppercase tracking-wider bg-[#E8F3FA] px-2 py-0.5 rounded border border-[#D9DEE2]">
                           {train.institution}
                         </span>
-                        <span className="text-[10px] font-bold text-neutral-400 shrink-0">{train.date}</span>
+                        <span className="text-[10px] font-bold text-[#5C6670] shrink-0">{train.date}</span>
                       </div>
-                      <h4 className="font-bold text-neutral-900 text-sm group-hover:text-[var(--accent)] transition-colors line-clamp-1">
+                      <h4 className="font-bold text-[#161A1D] text-sm group-hover:text-[#1769AA] transition-colors line-clamp-1">
                         {train.title}
                       </h4>
-                      <p className="text-xs text-neutral-500 leading-relaxed line-clamp-2">
+                      <p className="text-xs text-[#5C6670] leading-relaxed line-clamp-2">
                         {train.description}
                       </p>
                     </div>
                   </div>
 
                   {/* Footer preview chip */}
-                  <div className="pt-2 border-t border-neutral-100 flex items-center justify-between text-[11px]">
-                    <span className="text-neutral-400 font-mono text-[10px]">
+                  <div className="pt-2 border-t border-[#D9DEE2] flex items-center justify-between text-[11px]">
+                    <span className="text-[#5C6670] font-mono text-[10px]">
                       ID: {train.credentialId}
                     </span>
-                    <span className="text-[var(--accent)] font-semibold flex items-center gap-1 group-hover:underline text-[11px]">
+                    <span className="text-[#1769AA] font-semibold flex items-center gap-1 group-hover:underline text-[11px]">
                       <ShieldCheck className="w-3.5 h-3.5" /> Verified Credential &rarr;
                     </span>
                   </div>
@@ -314,34 +314,34 @@ export default function ResumeTimelines() {
 
         {/* Global Languages Proficiency */}
         <div className="space-y-6">
-          <div className="flex items-center gap-3 border-b border-neutral-100 pb-3">
-            <div className="w-9 h-9 rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(201,163,78,0.25)] border border-[#C9A34E]/30 bg-neutral-950 flex items-center justify-center shrink-0">
+          <div className="flex items-center gap-3 border-b border-[#D9DEE2] pb-3">
+            <div className="w-9 h-9 rounded-xl overflow-hidden border border-[#D9DEE2] bg-[#0D1114] flex items-center justify-center shrink-0">
               <img src={icon3dGlobe} alt="3D Languages" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
-            <h3 className="text-xl font-bold tracking-tight text-neutral-900">Language Proficiencies</h3>
+            <h3 className="text-xl font-bold tracking-tight text-[#161A1D]">Language Proficiencies</h3>
           </div>
 
-          <div className="bg-[var(--card-bg)] border border-neutral-200/60 p-6 rounded-2xl space-y-5">
+          <div className="bg-[#FFFFFF] border border-[#D9DEE2] p-6 rounded-2xl space-y-5 shadow-xs">
             {LANGUAGES.map((lang, idx) => (
               <div key={idx} className="space-y-2">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="font-bold text-neutral-800">{lang.name}</span>
-                  <span className="font-semibold text-[var(--accent)] bg-[var(--accent-glow)] px-2 py-0.5 rounded-full text-[10px]">
+                  <span className="font-bold text-[#161A1D]">{lang.name}</span>
+                  <span className="font-semibold text-[#1769AA] bg-[#E8F3FA] px-2.5 py-0.5 rounded-full text-[10px] border border-[#D9DEE2]">
                     {lang.level}
                   </span>
                 </div>
                 {/* Visual loading bar */}
-                <div className="w-full bg-neutral-100 h-2 rounded-full overflow-hidden">
+                <div className="w-full bg-[#F7F9FA] h-2 rounded-full overflow-hidden border border-[#D9DEE2]">
                   <div 
-                    className="bg-gradient-to-r from-[var(--accent)] to-[var(--gold-light)] h-full rounded-full transition-all duration-1000 ease-out"
+                    className="bg-[#1769AA] h-full rounded-full transition-all duration-1000 ease-out"
                     style={{ width: animateProgress ? `${lang.percentage}%` : "0%" }}
                   />
                 </div>
               </div>
             ))}
             
-            <p className="text-[11px] text-neutral-400 italic text-center pt-2 flex items-center justify-center gap-1.5">
-              <Globe className="w-3.5 h-3.5 text-[var(--accent)] animate-spin-slow" /> Facilitating seamless communication across diverse multicultural buyer environments.
+            <p className="text-[11px] text-[#5C6670] italic text-center pt-2 flex items-center justify-center gap-1.5">
+              <Globe className="w-3.5 h-3.5 text-[#1769AA]" /> Facilitating seamless communication across diverse multicultural buyer environments.
             </p>
           </div>
         </div>

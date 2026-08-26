@@ -30,7 +30,7 @@ import {
 import { ChatMessage, ChatAction } from "../types";
 import { getAssistantResponse, QUICK_PROMPTS } from "../lib/assistantEngine";
 import { assetPaths } from "../lib/assets";
-import icon3dAiTwin from "../assets/images/icon_3d_ai_twin_1787633201991.jpg";
+import icon3dAiTwin from "../assets/images/ai_twin_3d_icon_1787775262349.jpg";
 
 // Markdown-like text formatter with bolding, bullets, tags, code chips
 function FormattedMessageText({ text }: { text: string }) {
@@ -49,8 +49,8 @@ function FormattedMessageText({ text }: { text: string }) {
           const content = trimmed.substring(2);
           return (
             <div key={lineIdx} className="flex items-start gap-2 pl-0.5 my-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C9A34E] shrink-0 mt-2" />
-              <div className="flex-1 text-neutral-800">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1769AA] shrink-0 mt-2" />
+              <div className="flex-1 text-[#161A1D]">
                 {renderInlineFormatting(content)}
               </div>
             </div>
@@ -62,10 +62,10 @@ function FormattedMessageText({ text }: { text: string }) {
         if (numMatch) {
           return (
             <div key={lineIdx} className="flex items-start gap-2 pl-0.5 my-1">
-              <span className="font-bold text-[#C9A34E] text-xs shrink-0 min-w-[14px] mt-0.5">
+              <span className="font-bold text-[#1769AA] text-xs shrink-0 min-w-[14px] mt-0.5">
                 {numMatch[1]}.
               </span>
-              <div className="flex-1 text-neutral-800">
+              <div className="flex-1 text-[#161A1D]">
                 {renderInlineFormatting(numMatch[2])}
               </div>
             </div>
@@ -73,7 +73,7 @@ function FormattedMessageText({ text }: { text: string }) {
         }
 
         return (
-          <p key={lineIdx} className="text-neutral-800">
+          <p key={lineIdx} className="text-[#161A1D]">
             {renderInlineFormatting(line)}
           </p>
         );
@@ -93,7 +93,7 @@ function renderInlineFormatting(str: string) {
       return (
         <span
           key={i}
-          className="px-1.5 py-0.5 mx-0.5 rounded-md bg-amber-500/10 text-amber-900 border border-amber-300/40 font-mono text-[11px] font-semibold"
+          className="px-1.5 py-0.5 mx-0.5 rounded-md bg-[#E8F3FA] text-[#1769AA] border border-[#D9DEE2] font-mono text-[11px] font-semibold"
         >
           {codeText}
         </span>
@@ -105,7 +105,7 @@ function renderInlineFormatting(str: string) {
     return boldParts.map((boldPart, j) => {
       if (boldPart.startsWith("**") && boldPart.endsWith("**")) {
         return (
-          <strong key={`${i}-${j}`} className="font-bold text-neutral-950">
+          <strong key={`${i}-${j}`} className="font-bold text-[#161A1D]">
             {boldPart.slice(2, -2)}
           </strong>
         );
@@ -275,18 +275,18 @@ export default function AIAssistant() {
 
   const getActionIcon = (iconName?: string) => {
     switch (iconName) {
-      case "Briefcase": return <Briefcase className="w-3 h-3 text-[#C9A34E]" />;
-      case "Workflow": return <Workflow className="w-3 h-3 text-[#C9A34E]" />;
-      case "FlaskConical": return <FlaskConical className="w-3 h-3 text-[#C9A34E]" />;
-      case "FileText": return <FileText className="w-3 h-3 text-[#C9A34E]" />;
-      case "Mail": return <Mail className="w-3 h-3 text-[#C9A34E]" />;
-      case "Cpu": return <Cpu className="w-3 h-3 text-[#C9A34E]" />;
-      case "Target": return <Target className="w-3 h-3 text-[#C9A34E]" />;
-      case "GraduationCap": return <GraduationCap className="w-3 h-3 text-[#C9A34E]" />;
-      case "Languages": return <Languages className="w-3 h-3 text-[#C9A34E]" />;
-      case "Award": return <Award className="w-3 h-3 text-[#C9A34E]" />;
-      case "Copy": return <Copy className="w-3 h-3 text-[#C9A34E]" />;
-      default: return <ArrowRight className="w-3 h-3 text-[#C9A34E]" />;
+      case "Briefcase": return <Briefcase className="w-3 h-3 text-[#1769AA]" />;
+      case "Workflow": return <Workflow className="w-3 h-3 text-[#1769AA]" />;
+      case "FlaskConical": return <FlaskConical className="w-3 h-3 text-[#1769AA]" />;
+      case "FileText": return <FileText className="w-3 h-3 text-[#1769AA]" />;
+      case "Mail": return <Mail className="w-3 h-3 text-[#1769AA]" />;
+      case "Cpu": return <Cpu className="w-3 h-3 text-[#1769AA]" />;
+      case "Target": return <Target className="w-3 h-3 text-[#1769AA]" />;
+      case "GraduationCap": return <GraduationCap className="w-3 h-3 text-[#1769AA]" />;
+      case "Languages": return <Languages className="w-3 h-3 text-[#1769AA]" />;
+      case "Award": return <Award className="w-3 h-3 text-[#1769AA]" />;
+      case "Copy": return <Copy className="w-3 h-3 text-[#1769AA]" />;
+      default: return <ArrowRight className="w-3 h-3 text-[#1769AA]" />;
     }
   };
 
@@ -298,7 +298,7 @@ export default function AIAssistant() {
           
           {/* Teaser prompt banner */}
           {showTeaser && (
-            <div className="relative bg-white/95 backdrop-blur-md border border-neutral-200/80 p-3 rounded-2xl shadow-xl max-w-xs flex items-start gap-2.5 animate-fade-in group cursor-pointer hover:border-[#C9A34E]/60 transition-all"
+            <div className="relative bg-white/95 backdrop-blur-md border border-[#D9DEE2] p-3 rounded-2xl shadow-xl max-w-xs flex items-start gap-2.5 animate-fade-in group cursor-pointer hover:border-[#1769AA]/60 transition-all"
               onClick={() => setIsOpen(true)}
             >
               <button
@@ -306,20 +306,20 @@ export default function AIAssistant() {
                   e.stopPropagation();
                   setShowTeaser(false);
                 }}
-                className="absolute -top-1.5 -left-1.5 p-1 rounded-full bg-neutral-200 hover:bg-neutral-300 text-neutral-600 transition-colors shadow-xs"
+                className="absolute -top-1.5 -left-1.5 p-1 rounded-full bg-[#D9DEE2] hover:bg-[#C2C9D0] text-[#161A1D] transition-colors shadow-xs cursor-pointer"
                 title="Dismiss hint"
               >
                 <X className="w-3 h-3" />
               </button>
 
-              <div className="p-1.5 rounded-xl bg-amber-500/10 text-[#C9A34E] shrink-0 mt-0.5">
+              <div className="p-1.5 rounded-xl bg-[#E8F3FA] text-[#1769AA] shrink-0 mt-0.5 border border-[#D9DEE2]">
                 <Sparkles className="w-3.5 h-3.5 animate-pulse" />
               </div>
               <div className="text-left space-y-0.5 pr-2">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-[#C9A34E]">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-[#1769AA]">
                   AI Portfolio Twin
                 </p>
-                <p className="text-xs font-semibold text-neutral-800 leading-snug">
+                <p className="text-xs font-semibold text-[#161A1D] leading-snug">
                   Have questions on textile engineering, composites, or research? Ask me!
                 </p>
               </div>
@@ -329,12 +329,12 @@ export default function AIAssistant() {
           {/* Main Floating Trigger Button */}
           <button
             onClick={() => setIsOpen(true)}
-            className="p-2 sm:py-2.5 sm:px-4 rounded-full bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 text-white shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-2.5 group border-2 border-[#C9A34E]/40 hover:border-[#C9A34E] cursor-pointer"
+            className="p-2 sm:py-2.5 sm:px-4 rounded-full bg-[#0D1114] text-white shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-2.5 group border border-[#D9DEE2] hover:border-[#1769AA] cursor-pointer"
             aria-label="Open AI Assistant"
           >
             <div className="relative flex items-center justify-center">
-              <span className="absolute inset-0 rounded-full bg-[#C9A34E]/30 animate-ping opacity-75" />
-              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#C9A34E]/60 shadow-[0_0_12px_rgba(201,163,78,0.4)] bg-neutral-950 flex items-center justify-center shrink-0">
+              <span className="absolute inset-0 rounded-full bg-[#1769AA]/30 animate-ping opacity-75" />
+              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#D9DEE2] shadow-[0_0_12px_rgba(23,105,170,0.3)] bg-[#0D1114] flex items-center justify-center shrink-0">
                 <img 
                   src={icon3dAiTwin} 
                   alt="3D AI Twin" 
@@ -357,18 +357,18 @@ export default function AIAssistant() {
       {/* Main chat modal layout */}
       {isOpen && (
         <div 
-          className={`fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-[4900] bg-white rounded-3xl shadow-[0_25px_70px_-15px_rgba(0,0,0,0.35)] border border-neutral-200/90 flex flex-col overflow-hidden transition-all duration-300 max-w-[95vw] ${
+          className={`fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-[4900] bg-[#FFFFFF] rounded-3xl shadow-[0_25px_70px_-15px_rgba(0,0,0,0.35)] border border-[#D9DEE2] flex flex-col overflow-hidden transition-all duration-300 max-w-[95vw] ${
             isExpanded 
               ? "w-[calc(100vw-24px)] sm:w-[620px] md:w-[700px] h-[calc(100vh-32px)] sm:h-[720px]" 
               : "w-[calc(100vw-24px)] sm:w-[460px] md:w-[490px] h-[580px] sm:h-[630px]"
           }`}
         >
           {/* Header */}
-          <div className="px-4 py-3.5 bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 text-white flex items-center justify-between border-b border-neutral-800 shrink-0 gap-2">
+          <div className="px-4 py-3.5 bg-gradient-to-r from-[#0D1114] via-[#161A1D] to-[#0D1114] text-white flex items-center justify-between border-b border-[#2B3238] shrink-0 gap-2">
             {/* Left: Avatar & Info */}
             <div className="flex items-center gap-3 min-w-0 flex-1">
               <div className="relative shrink-0">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl overflow-hidden shadow-[0_4px_12px_rgba(201,163,78,0.3)] border border-[#C9A34E]/50 bg-neutral-950 flex items-center justify-center">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl overflow-hidden border border-[#D9DEE2]/40 bg-[#0D1114] flex items-center justify-center">
                   <img 
                     src={icon3dAiTwin} 
                     alt="3D AI Twin Avatar" 
@@ -384,11 +384,11 @@ export default function AIAssistant() {
                   <h4 className="font-bold text-xs sm:text-sm tracking-tight text-white truncate">
                     Shadat Mahin
                   </h4>
-                  <span className="px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider bg-[#C9A34E] text-neutral-950 rounded-md shrink-0">
+                  <span className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider bg-[#1769AA] text-white rounded-md shrink-0">
                     AI Twin
                   </span>
                 </div>
-                <p className="text-[11px] text-neutral-400 flex items-center gap-1.5 truncate mt-0.5">
+                <p className="text-[11px] text-[#D9DEE2] flex items-center gap-1.5 truncate mt-0.5">
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse shrink-0" />
                   <span>Online &bull; Textile Engineering &amp; Research Assistant</span>
                 </p>
@@ -399,7 +399,7 @@ export default function AIAssistant() {
             <div className="flex items-center gap-0.5 shrink-0">
               <button
                 onClick={restartChat}
-                className="p-2 rounded-xl text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors"
+                className="p-2 rounded-xl text-neutral-400 hover:text-white hover:bg-[#2B3238] transition-colors cursor-pointer"
                 title="Restart conversation"
                 aria-label="Restart chat"
               >
@@ -408,7 +408,7 @@ export default function AIAssistant() {
 
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="hidden sm:inline-flex p-2 rounded-xl text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors"
+                className="hidden sm:inline-flex p-2 rounded-xl text-neutral-400 hover:text-white hover:bg-[#2B3238] transition-colors cursor-pointer"
                 title={isExpanded ? "Collapse window" : "Expand window"}
                 aria-label="Toggle expand"
               >
@@ -417,7 +417,7 @@ export default function AIAssistant() {
 
               <button 
                 onClick={() => setIsOpen(false)}
-                className="p-2 rounded-xl hover:bg-neutral-800 text-neutral-400 hover:text-white transition-colors cursor-pointer"
+                className="p-2 rounded-xl hover:bg-[#2B3238] text-neutral-400 hover:text-white transition-colors cursor-pointer"
                 aria-label="Close assistant"
               >
                 <X className="w-5 h-5" />
@@ -426,22 +426,22 @@ export default function AIAssistant() {
           </div>
 
           {/* Quick Category prompt carousel */}
-          <div className="px-3.5 py-2.5 bg-neutral-100/80 border-b border-neutral-200/70 flex gap-2 overflow-x-auto shrink-0 scrollbar-none">
+          <div className="px-3.5 py-2.5 bg-[#F7F9FA] border-b border-[#D9DEE2] flex gap-2 overflow-x-auto shrink-0 scrollbar-none">
             {QUICK_PROMPTS.map((qp, idx) => (
               <button
                 key={idx}
                 onClick={() => sendMessage(qp.prompt)}
                 disabled={isLoading}
-                className="text-[11px] font-semibold text-neutral-700 bg-white border border-neutral-200/90 px-3 py-1.5 rounded-full hover:border-[#C9A34E] hover:text-neutral-950 hover:bg-amber-50/50 transition-all shrink-0 flex items-center gap-1.5 cursor-pointer disabled:opacity-50 active:scale-95 shadow-2xs whitespace-nowrap"
+                className="text-[11px] font-semibold text-[#161A1D] bg-[#FFFFFF] border border-[#D9DEE2] px-3 py-1.5 rounded-full hover:border-[#1769AA] hover:text-[#1769AA] hover:bg-[#E8F3FA] transition-all shrink-0 flex items-center gap-1.5 cursor-pointer disabled:opacity-50 active:scale-95 shadow-2xs whitespace-nowrap"
               >
-                <Sparkles className="w-3 h-3 text-[#C9A34E]" />
+                <Sparkles className="w-3 h-3 text-[#1769AA]" />
                 {qp.category}
               </button>
             ))}
           </div>
 
           {/* Messages layout */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-[#FAF9F6] to-[#F5F4F0]/60">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#F7F9FA]">
             {messages.map((msg) => {
               const isUser = msg.sender === "user";
 
@@ -461,11 +461,11 @@ export default function AIAssistant() {
                     <div
                       className={`p-1.5 rounded-xl h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center shrink-0 shadow-xs ${
                         isUser
-                          ? "bg-neutral-900 text-white"
-                          : "bg-gradient-to-br from-[#C9A34E] to-[#E5C97A] text-neutral-950"
+                          ? "bg-[#161A1D] text-white"
+                          : "bg-[#1769AA] text-white"
                       }`}
                     >
-                      {isUser ? <User className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Bot className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-950" />}
+                      {isUser ? <User className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Bot className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />}
                     </div>
 
                     {/* Bubble */}
@@ -473,8 +473,8 @@ export default function AIAssistant() {
                       <div
                         className={`p-3.5 sm:p-4 rounded-2xl text-left shadow-xs transition-all ${
                           isUser
-                            ? "bg-neutral-900 text-white rounded-tr-none"
-                            : "bg-white text-neutral-800 border border-neutral-200/80 rounded-tl-none shadow-sm"
+                            ? "bg-[#161A1D] text-white rounded-tr-none"
+                            : "bg-[#FFFFFF] text-[#161A1D] border border-[#D9DEE2] rounded-tl-none shadow-xs"
                         }`}
                       >
                         {isUser ? (
@@ -485,12 +485,12 @@ export default function AIAssistant() {
 
                         {/* Interactive Action Buttons inside Bot Message */}
                         {msg.actions && msg.actions.length > 0 && (
-                          <div className="mt-3 pt-2.5 border-t border-neutral-100 flex flex-wrap gap-1.5">
+                          <div className="mt-3 pt-2.5 border-t border-[#D9DEE2] flex flex-wrap gap-1.5">
                             {msg.actions.map((act, aIdx) => (
                               <button
                                 key={aIdx}
                                 onClick={() => handleActionClick(act)}
-                                className="px-2.5 py-1 rounded-lg bg-neutral-50 hover:bg-[#C9A34E] hover:text-white border border-neutral-200/80 text-[10px] font-bold text-neutral-800 uppercase tracking-wider flex items-center gap-1.5 transition-all cursor-pointer active:scale-95"
+                                className="px-2.5 py-1 rounded-lg bg-[#F7F9FA] hover:bg-[#1769AA] hover:text-white border border-[#D9DEE2] text-[10px] font-bold text-[#161A1D] uppercase tracking-wider flex items-center gap-1.5 transition-all cursor-pointer active:scale-95"
                               >
                                 {getActionIcon(act.icon)}
                                 {act.label}
@@ -504,7 +504,7 @@ export default function AIAssistant() {
                       {!isUser && (
                         <button
                           onClick={() => copyToClipboard(msg.text, msg.id)}
-                          className="absolute top-2 right-2 opacity-0 group-hover/bubble:opacity-100 p-1.5 rounded-md bg-neutral-100 hover:bg-neutral-200 text-neutral-500 hover:text-neutral-900 transition-all cursor-pointer text-[10px]"
+                          className="absolute top-2 right-2 opacity-0 group-hover/bubble:opacity-100 p-1.5 rounded-md bg-[#F7F9FA] hover:bg-[#E8F3FA] text-[#5C6670] hover:text-[#161A1D] transition-all cursor-pointer text-[10px] border border-[#D9DEE2]"
                           title="Copy response"
                         >
                           {copiedMsgId === msg.id ? (
@@ -527,9 +527,9 @@ export default function AIAssistant() {
                           key={sIdx}
                           onClick={() => sendMessage(suggest)}
                           disabled={isLoading}
-                          className="text-[11px] font-semibold text-neutral-600 bg-white border border-neutral-200/80 hover:border-[#C9A34E] hover:text-neutral-950 hover:bg-amber-50/30 px-3 py-1 rounded-full transition-all flex items-center gap-1.5 cursor-pointer disabled:opacity-40 shadow-2xs active:scale-95"
+                          className="text-[11px] font-semibold text-[#5C6670] bg-[#FFFFFF] border border-[#D9DEE2] hover:border-[#1769AA] hover:text-[#1769AA] hover:bg-[#E8F3FA] px-3 py-1 rounded-full transition-all flex items-center gap-1.5 cursor-pointer disabled:opacity-40 shadow-2xs active:scale-95"
                         >
-                          <CornerDownRight className="w-3 h-3 text-[#C9A34E] shrink-0" />
+                          <CornerDownRight className="w-3 h-3 text-[#1769AA] shrink-0" />
                           {suggest}
                         </button>
                       ))}
@@ -537,7 +537,7 @@ export default function AIAssistant() {
                   )}
 
                   {/* Timestamp */}
-                  <span className={`text-[9px] text-neutral-400 px-1 ${isUser ? "pr-10" : "pl-10"}`}>
+                  <span className={`text-[9px] text-[#5C6670] px-1 ${isUser ? "pr-10" : "pl-10"}`}>
                     {new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </span>
                 </div>
@@ -547,11 +547,11 @@ export default function AIAssistant() {
             {/* Thinking / Loading Animation */}
             {isLoading && (
               <div className="flex gap-2.5 max-w-[85%] mr-auto items-center animate-fade-in">
-                <div className="p-1.5 rounded-xl h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center shrink-0 bg-gradient-to-br from-[#C9A34E] to-[#E5C97A] text-neutral-950">
-                  <Bot className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-950" />
+                <div className="p-1.5 rounded-xl h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center shrink-0 bg-[#1769AA] text-white">
+                  <Bot className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                 </div>
-                <div className="p-3 bg-white text-neutral-600 border border-neutral-200/70 rounded-2xl rounded-tl-none font-medium text-xs flex items-center gap-2 shadow-xs">
-                  <Loader2 className="w-3.5 h-3.5 animate-spin text-[#C9A34E]" /> 
+                <div className="p-3 bg-[#FFFFFF] text-[#5C6670] border border-[#D9DEE2] rounded-2xl rounded-tl-none font-medium text-xs flex items-center gap-2 shadow-xs">
+                  <Loader2 className="w-3.5 h-3.5 animate-spin text-[#1769AA]" /> 
                   <span>Consulting Mahin's portfolio knowledge base...</span>
                 </div>
               </div>
@@ -561,7 +561,7 @@ export default function AIAssistant() {
           </div>
 
           {/* Chat input box */}
-          <div className="p-3 bg-white border-t border-neutral-200/80 flex flex-col gap-2 shrink-0">
+          <div className="p-3 bg-[#FFFFFF] border-t border-[#D9DEE2] flex flex-col gap-2 shrink-0">
             <div className="flex gap-2 items-center">
               <input
                 ref={inputRef}
@@ -571,22 +571,22 @@ export default function AIAssistant() {
                 onKeyDown={handleKeyPress}
                 disabled={isLoading}
                 placeholder={placeholderHints[placeholderIndex]}
-                className="flex-1 text-xs sm:text-[13px] border border-neutral-200 px-3.5 py-2.5 rounded-xl focus:border-[#C9A34E] focus:ring-1 focus:ring-[#C9A34E]/20 focus:outline-none placeholder:text-neutral-400 text-neutral-900 transition-all truncate"
+                className="flex-1 text-xs sm:text-[13px] border border-[#D9DEE2] px-3.5 py-2.5 rounded-xl focus:border-[#1769AA] focus:ring-1 focus:ring-[#1769AA]/20 focus:outline-none placeholder:text-[#5C6670]/70 text-[#161A1D] transition-all truncate bg-[#F7F9FA]"
               />
               <button
                 onClick={() => sendMessage()}
                 disabled={isLoading || !input.trim()}
-                className="p-2.5 sm:p-3 rounded-xl bg-neutral-950 hover:bg-[#C9A34E] text-white disabled:opacity-30 disabled:hover:bg-neutral-950 transition-all shrink-0 cursor-pointer active:scale-95 shadow-sm group"
+                className="p-2.5 sm:p-3 rounded-xl bg-[#161A1D] hover:bg-[#1769AA] text-white disabled:opacity-30 disabled:hover:bg-[#161A1D] transition-all shrink-0 cursor-pointer active:scale-95 shadow-xs group"
                 aria-label="Send message"
               >
-                <Send className="w-4 h-4 text-[#C9A34E] group-hover:text-white transition-colors" />
+                <Send className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
               </button>
             </div>
 
-            <div className="flex items-center justify-between text-[10px] text-neutral-400 px-1">
-              <span>Press <kbd className="px-1 py-0.5 bg-neutral-100 rounded text-[9px] border border-neutral-200 text-neutral-600">Enter ↵</kbd> to ask</span>
-              <span className="flex items-center gap-1 text-neutral-500">
-                <HelpCircle className="w-3 h-3 text-[#C9A34E]" /> Tailored from CV &amp; Project data
+            <div className="flex items-center justify-between text-[10px] text-[#5C6670] px-1">
+              <span>Press <kbd className="px-1 py-0.5 bg-[#F7F9FA] rounded text-[9px] border border-[#D9DEE2] text-[#161A1D]">Enter ↵</kbd> to ask</span>
+              <span className="flex items-center gap-1 text-[#5C6670]">
+                <HelpCircle className="w-3 h-3 text-[#1769AA]" /> Tailored from CV &amp; Project data
               </span>
             </div>
           </div>
