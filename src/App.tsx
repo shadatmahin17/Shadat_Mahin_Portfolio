@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { 
   Menu, 
   X, 
@@ -84,41 +84,46 @@ export default function App() {
   const [typewriterText, setTypewriterText] = useState("");
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [charIdx, setCharIdx] = useState(0);
 
-  const phrases = [
+  const phrases = useMemo(() => [
     "Materials & Aerospace Research",
     "Composites, Bio-based Materials & 3D Structures",
     "Textile Engineering & Wet Processing Chemistry",
     "Computational Engineering & MATLAB Simulations"
-  ];
+  ], []);
 
   // Typewriter Effect
   useEffect(() => {
     let timer: NodeJS.Timeout;
     const currentPhrase = phrases[phraseIdx];
 
-    if (isDeleting) {
-      timer = setTimeout(() => {
-        setTypewriterText(currentPhrase.substring(0, charIdx - 1));
-        setCharIdx((prev) => prev - 1);
-      }, 30);
+    if (!isDeleting) {
+      if (typewriterText.length < currentPhrase.length) {
+        timer = setTimeout(() => {
+          setTypewriterText(currentPhrase.slice(0, typewriterText.length + 1));
+        }, 65);
+      } else {
+        // Pause and display complete phrase for reading
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, 2000);
+      }
     } else {
-      timer = setTimeout(() => {
-        setTypewriterText(currentPhrase.substring(0, charIdx + 1));
-        setCharIdx((prev) => prev + 1);
-      }, 65);
-    }
-
-    if (!isDeleting && charIdx === currentPhrase.length) {
-      timer = setTimeout(() => setIsDeleting(true), 1800);
-    } else if (isDeleting && charIdx === 0) {
-      setIsDeleting(false);
-      setPhraseIdx((prev) => (prev + 1) % phrases.length);
+      if (typewriterText.length > 0) {
+        timer = setTimeout(() => {
+          setTypewriterText(currentPhrase.slice(0, typewriterText.length - 1));
+        }, 30);
+      } else {
+        // Pause briefly before typing next phrase
+        timer = setTimeout(() => {
+          setIsDeleting(false);
+          setPhraseIdx((prev) => (prev + 1) % phrases.length);
+        }, 350);
+      }
     }
 
     return () => clearTimeout(timer);
-  }, [charIdx, isDeleting, phraseIdx]);
+  }, [typewriterText, isDeleting, phraseIdx, phrases]);
 
   // Scroll details tracking
   useEffect(() => {
