@@ -65,7 +65,7 @@ export default function ContactSection() {
     } catch (err: any) {
       console.error(err);
       setStatus("error");
-      setFeedbackMsg(err.message || "Could not process online transmission. Please send an inquiry directly to shadatmahin681@gmail.com!");
+      setFeedbackMsg(err.message || "Could not process online transmission. Please send an inquiry directly to info@shadatmahin.site!");
     }
   };
 
@@ -89,7 +89,7 @@ export default function ContactSection() {
             
             <div className="space-y-4">
               <a 
-                href="mailto:shadatmahin681@gmail.com" 
+                href="mailto:info@shadatmahin.site" 
                 className="flex items-center gap-4 p-4 rounded-2xl bg-neutral-50 border border-neutral-200/50 hover:border-[var(--accent)] hover:bg-neutral-100/50 transition-all group shadow-xs"
               >
                 <div className="w-11 h-11 rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(201,163,78,0.3)] border border-[#C9A34E]/35 bg-neutral-950 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -102,7 +102,7 @@ export default function ContactSection() {
                 </div>
                 <div className="space-y-0.5 text-left">
                   <p className="text-[10px] font-extrabold text-neutral-400 uppercase tracking-widest">Email Address</p>
-                  <p className="text-sm font-semibold text-neutral-800 group-hover:text-[var(--accent)] transition-colors">shadatmahin681@gmail.com</p>
+                  <p className="text-sm font-semibold text-neutral-800 group-hover:text-[var(--accent)] transition-colors">info@shadatmahin.site</p>
                 </div>
               </a>
 

@@ -198,9 +198,19 @@ export default function AIAssistant() {
       link.download = "shadat_mahin_resume.pdf";
       link.click();
     } else if (action.action === "copy_email") {
-      const email = action.payload || "shadatmahin681@gmail.com";
-      navigator.clipboard.writeText(email);
-      alert("Copied to clipboard: " + email);
+      const email = action.payload || "info@shadatmahin.site";
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(email);
+      }
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `bot-copied-${Date.now()}`,
+          sender: "bot",
+          text: `📋 Copied **${email}** to your clipboard! Feel free to send your inquiry or paste it into your email client.`,
+          timestamp: new Date()
+        }
+      ]);
     } else if (action.action === "suggest_query" && action.payload) {
       sendMessage(action.payload);
     }
@@ -252,7 +262,7 @@ export default function AIAssistant() {
           {
             id: `error-${Date.now()}`,
             sender: "bot",
-            text: "I experienced a minor latency. You can contact Shadat directly at `shadatmahin681@gmail.com`!",
+            text: "I experienced a minor latency. You can contact Shadat directly at `info@shadatmahin.site`!",
             timestamp: new Date(),
             isError: true,
             actions: [

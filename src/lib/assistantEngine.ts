@@ -398,7 +398,7 @@ export function getAssistantResponse(rawInput: string): AssistantResponse {
     query.includes("collaborat")
   ) {
     return {
-      text: "📬 **Get in Touch with Shadat Hossain Mahin:**\n\n• **Full Name:** Shadat Hossain Mahin (Mahin)\n• **Location:** Dhaka, Bangladesh\n• **Email:** `shadatmahin681@gmail.com`\n• **Opportunities:** Academic research collaborations, materials science projects, textile engineering consulting, and postgraduate opportunities.\n\nYou can reach out directly via email or submit a message through the contact section on this site!",
+      text: "📬 **Get in Touch with Shadat Hossain Mahin:**\n\n• **Full Name:** Shadat Hossain Mahin (Mahin)\n• **Location:** Dhaka, Bangladesh\n• **Email:** `info@shadatmahin.site`\n• **Opportunities:** Academic research collaborations, materials science projects, textile engineering consulting, and postgraduate opportunities.\n\nYou can reach out directly via email or submit a message through the contact section on this site!",
       suggestions: [
         "Download Mahin's Resume",
         "Send message via Contact Form",
@@ -407,7 +407,7 @@ export function getAssistantResponse(rawInput: string): AssistantResponse {
       actions: [
         { label: "Open Contact Form", action: "scroll_contact", icon: "Mail" },
         { label: "Download Resume", action: "download_cv", icon: "FileText" },
-        { label: "Copy Email", action: "copy_email", payload: "shadatmahin681@gmail.com", icon: "Copy" }
+        { label: "Copy Email", action: "copy_email", payload: "info@shadatmahin.site", icon: "Copy" }
       ]
     };
   }
